@@ -1,0 +1,32 @@
+h3, p {
+  color: #444;
+}
+.uk-label-success {
+  color: #fff;
+  background-color: #75a76b;
+}
+.uk-form-success, .uk-form-success:focus {
+  color: #fff;
+  border-color: #75a76b;
+  background-color: #75a76b;
+}
+
+.uk-label-warning {
+  color: #fff;
+  background-color: #c8b365;
+}
+.uk-form-warning, .uk-form-warning:focus  {
+  color: #fff;
+  border-color: #c8b365;
+  background-color: #c8b365;
+}
+
+.uk-label-absent {
+  color: #fff;
+  background-color: #787c7e;
+}
+.uk-form-absent, .uk-form-absent:focus {
+  color: #fff;
+  border-color: #787c7e;
+  background-color: #787c7e;
+}
