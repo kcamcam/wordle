@@ -1,14 +1,17 @@
 function getOpenList(){
+  const regex = /[a-z]/;
   let absent = document.getElementById('absent').value.toLowerCase();
   let correct = '';
   for (let i = 0; i < 5; i++) {
-    correct += document.getElementById(`correct-${i}`).value.toLowerCase();
+    character = document.getElementById(`correct-${i}`).value.toLowerCase();
+    if (regex.test(character)) { correct += character; } else { correct += '.'; }
   }
   let present = [];
   for (let i = 0; i < 5; i++) {
     present[i] = '';
     for (let j = 0; j < 5; j++) {
-      present[i] += document.getElementById(`present-${i}-${j}`).value.toLowerCase();
+      character = document.getElementById(`present-${i}-${j}`).value.toLowerCase();
+      if (regex.test(character)) { present[i] += character; } else { present[i] += '.'; }
     }
   }
   let openList = [];
@@ -30,7 +33,7 @@ function getOpenList(){
 
     // the word does not have the correct letter(s) in the correct position(s)
     for (let i = 0; i < correct.length; i++) {
-      if (correct[i] === '') continue;
+      if (correct[i] === '.') continue;
       invalid = !(correct[i] === word[i]);
       if (invalid) break;
     }
@@ -38,7 +41,7 @@ function getOpenList(){
 
     for (let pres of present) {
       for (let i = 0; i < pres.length; i++) {
-        if (pres[i] === '') continue;
+        if (pres[i] === '.') continue;
         // the word does not contain a character that should be present
         invalid = !word.includes(pres[i]);
         if (invalid) break;
