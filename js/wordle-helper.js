@@ -6,7 +6,7 @@ function getOpenList(){
   }
   let present = [];
   for (let i = 0; i < 5; i++) {
-    present = '';
+    present[i] = '';
     for (let j = 0; j < 5; j++) {
       present[i] += document.getElementById(`present-${i}-${j}`).value.toLowerCase();
     }
@@ -43,7 +43,7 @@ function getOpenList(){
         invalid = !word.includes(pres[i]);
         if (invalid) break;
         // the word contains a character that should be prresent but in the wrong position
-        invalid = word[i] === pres[i];
+        invalid = (word[i] === pres[i]);
         if (invalid) break;
       }
       if (invalid) break;
